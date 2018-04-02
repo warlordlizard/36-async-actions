@@ -12,9 +12,9 @@ const gameRouter = require('./route/game-route.js');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
-const MONGODB_URI = 'mongodb://localhost/gamesdb';
 
-mongoose.connect(MONGODB_URI);
+
+mongoose.connect(process.env.MONGODB_URI);
 
 app.use(cors());
 app.use(morgan('dev'));

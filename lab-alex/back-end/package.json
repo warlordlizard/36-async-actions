@@ -6,6 +6,8 @@
   "scripts": {
     "test": "DEBUG='game*' jest",
     "start": "DEBUG='game*' nodemon server.js",
+    "start-db": "mkdir -p ./db && mongod --dbpath ./db",
+    "stop-db": "killall mongod",
     "test2": "DEBUG='game*' jest list.test.js"
   },
   "keywords": [],
@@ -16,6 +18,7 @@
     "body-parser": "^1.18.2",
     "cors": "^2.8.4",
     "debug": "^3.1.0",
+    "dotenv": "^4.0.0",
     "express": "^4.16.2",
     "http-errors": "^1.6.2",
     "mongoose": "^5.0.7",

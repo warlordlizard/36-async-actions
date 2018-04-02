@@ -1,6 +1,6 @@
 'use strict';
 
-cnst reporter = store => next => action => {
+const reporter = store => next => action => {
   console.log('ACTION', action);
   try {
     let result = next(action);
@@ -11,5 +11,5 @@ cnst reporter = store => next => action => {
     console.error('__ERROR__', error);
     return error;
   }
-}
+};
 export default reporter;
