@@ -31,7 +31,7 @@ export default class ListForm extends React.Component {
         }))
         .catch(error => {
           util.log('LIST FORM ERROR: ', error);
-          this.setState({ error })
+          this.setState({ error });
         });
     }
   }
@@ -47,6 +47,6 @@ export default class ListForm extends React.Component {
           type="text"/>
         <button type='submit'>{this.props.buttonText}</button>
       </form>
-    )
+    );
   }
 }
