@@ -24,7 +24,7 @@ class Dashboard extends React.Component {
           buttonText='Create List' />
         {this.props.lists.map(list => 
           <div key={list._id}>
-            <p>{list.title}</p>  
+            <p>{list.name}</p>  
             <button onClick={() => this.props.listDelete(list)}>X</button>
           </div>
         )}

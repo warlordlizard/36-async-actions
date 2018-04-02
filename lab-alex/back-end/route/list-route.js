@@ -25,7 +25,7 @@ listRouter.get('/api/lists', (req, res, next) => {
   pageNumber--;
 
   List.find({})
-    .sort({ title: 'asc' })
+    .sort({ name: 'asc' })
     .skip(pageNumber * 50)
     .limit(50)
     .then(lists => res.json(lists))

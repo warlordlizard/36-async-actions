@@ -9,7 +9,7 @@ const mongoose = require('mongoose');
 const debug = require('debug')('game:server');
 const listRouter = require('./route/list-route.js');
 const gameRouter = require('./route/game-route.js');
-
+require('dotenv').config();
 const app = express();
 const PORT = process.env.PORT || 3000;
 

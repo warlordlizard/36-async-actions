@@ -7,7 +7,7 @@ import * as util from '../../lib/util.js';
 export default class ListForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = props .list ? props.list : {title: ''};
+    this.state = props .list ? props.list : {name: ''};
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
@@ -27,7 +27,7 @@ export default class ListForm extends React.Component {
       result
         .then(() => this.setState({
           error: null,
-          title: '',
+          name: '',
         }))
         .catch(error => {
           util.log('LIST FORM ERROR: ', error);
@@ -36,16 +36,16 @@ export default class ListForm extends React.Component {
     }
   }
   handleChange(e) {
-    this.setState({ title: e.target.value });
+    this.setState({ name: e.target.value });
   }
 
   render() {
     return(
       <form onSubmit={this.handleSubmit}>
         <input 
-          name='title'
+          name='name'
           placeholder='enter a title'
-          value={this.state.title}
+          value={this.state.name}
           onChange={this.handleChange}
           type="text"/>
         <button type='submit'>{this.props.buttonText}</button>
