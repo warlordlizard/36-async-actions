@@ -35,8 +35,11 @@ export default class ListForm extends React.Component {
         });
     }
   }
-
   handleChange(e) {
+    this.setState({ title: e.target.value });
+  }
+
+  render() {
     return(
       <form onSubmit={this.handleSubmit}>
         <input 

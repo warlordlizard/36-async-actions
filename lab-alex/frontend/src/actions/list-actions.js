@@ -23,7 +23,7 @@ export const listDelete = (list) => ({
 });
 
 export const listsFetchRequest = () => (dispatch) => {
-  return superagent.get(`${__API_URL__}/api/list`)
+  return superagent.get(`${__API_URL__}/api/lists`)
     .then(res => {
       dispatch(listSet(res.body));
       return res;
@@ -31,7 +31,7 @@ export const listsFetchRequest = () => (dispatch) => {
 };
 
 export const listCreateRequest = (list) => (dispatch) => {
-  return superagent.post(`${__API_URL__}/api/lists`)
+  return superagent.post(`${__API_URL__}/api/list`)
     .send(list)
     .then(res => {
       dispatch(listCreate(res.body));

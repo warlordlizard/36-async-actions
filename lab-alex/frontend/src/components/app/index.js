@@ -12,7 +12,7 @@ export default class App extends React.Component {
   render() {
     return(
       <main className='app'>
-        <Provider>
+        <Provider store={store}>
           <BrowserRouter>
             <section>
               <Route exact path='/' component={Dashboard} />
