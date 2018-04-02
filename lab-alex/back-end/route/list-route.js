@@ -17,6 +17,21 @@ listRouter.get('/api/list/:listId', function(req, res, next) {
     .catch(next);
 });
 
+listRouter.get('/api/lists', (req, res, next) => {
+  debug('GET: /api/lists');
+
+  let pageNumber = Number(req.query.page);
+  if (!pageNumber || pageNumber < 1) pageNumber = 1;
+  pageNumber--;
+
+  List.find({})
+    .sort({ name: 'asc' })
+    .skip(pageNumber * 50)
+    .limit(50)
+    .then(lists => res.json(lists))
+    .catch(next);
+});
+
 listRouter.post('/api/list', jsonParser, function(req, res, next) {
   debug('POST: /api/list');
   if (!req.body.name) return next(createError(400, 'bad request'));
